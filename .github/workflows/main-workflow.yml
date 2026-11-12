@@ -1,0 +1,16 @@
+name: Programa con make
+on:
+  push:
+    branches: [test]
+  workflow_dispatch:
+jobs:
+  compile-test-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: ./conversor c2f 100
+  compile-test-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: ./conversor c2f 100
